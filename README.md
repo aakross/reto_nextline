@@ -1,68 +1,34 @@
-# gestion-tareas
+# retofront_Nextline
 
-## Build Setup
+Este componente muestra una lista de tareas y permite editar, actualizar y eliminar cada tarea.
 
-```bash
-# install dependencies
-$ npm install
+## Propiedades
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+- `tasks` (Array): Arreglo que almacena las tareas obtenidas del servidor.
+- `editModal` (Boolean): Variable que controla la visibilidad del modal de edición de tarea.
+- `editedTask` (Object): Objeto que contiene los datos de la tarea que se está editando.
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## Métodos
 
-# generate static project
-$ npm run generate
-```
+- `fetchTasks()`: Método que obtiene las tareas del servidor mediante una solicitud HTTP.
+- `editTaskModal(task)`: Método que se llama cuando se hace clic en el botón de editar de una tarea. Establece la tarea seleccionada en `editedTask` y muestra el modal de edición.
+- `editTask(task)`: Método que se llama para editar una tarea en el servidor. Hace una solicitud PUT con los datos actualizados de la tarea.
+- `saveEditedTask()`: Método que se llama cuando se guarda la edición de una tarea. Llama a `editTask` y luego oculta el modal de edición.
+- `deleteTask(taskId)`: Método que se llama para eliminar una tarea en el servidor. Hace una solicitud DELETE y actualiza la lista de tareas en el estado del componente.
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## Uso
 
-## Special Directories
+```vue
+<template>
+  <!-- Contenido del componente -->
+</template>
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+<script>
+export default {
+  // Definición del componente
+}
+</script>
 
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+<style>
+/* Estilos del componente */
+</style>
